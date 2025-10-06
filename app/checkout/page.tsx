@@ -306,7 +306,7 @@ export default function CheckoutPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Checkout Form */}
-          <div className="lg:w-2/3">
+          <div className="lg:w-2/3 order-2 lg:order-1">
             <div className="bg-card rounded-lg shadow-sm border border-border p-6 mb-6">
               <h1 className="text-2xl font-bold text-text mb-6">Checkout</h1>
 
@@ -487,7 +487,7 @@ export default function CheckoutPage() {
           </div>
 
           {/* Order Summary */}
-          <div className="lg:w-1/3">
+          <div className="lg:w-1/3 order-1 lg:order-2">
             <div className="bg-card rounded-lg shadow-sm border border-border p-6 sticky top-8">
               <h2 className="text-xl font-bold text-text mb-4">Order Summary</h2>
 
