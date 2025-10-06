@@ -99,7 +99,15 @@ const allProducts = [
   ...specialEditionJerseys.map(jersey => ({ ...jersey, isSpecialEdition: true }))
 ];
 
-const years = ['2024', '2025', 'retro'];
+interface Product {
+  name: string;
+  slug: string;
+  logo: string;
+  backImage: string;
+  description: string;
+  price: number;
+  isSpecialEdition: boolean;
+}
 
 export default function Home() {
   const { addItem } = useCart();
@@ -136,7 +144,7 @@ export default function Home() {
     setFilteredTeams(filteredTeamsList);
   }, [selectedClub, selectedYear]);
 
-  const handleAddToCart = (product: any) => {
+  const handleAddToCart = (product: Product) => {
     addItem({
       name: product.name,
       image: product.logo,
