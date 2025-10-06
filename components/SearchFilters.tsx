@@ -8,6 +8,22 @@ interface SearchFiltersProps {
 
 const years = ['2024', '2025', 'retro'];
 
+const clubs = [
+  'AC Milan',
+  'Argentina',
+  'Arsenal',
+  'Athletic Club',
+  'Atletico Madrid',
+  'Barcelona',
+  'Chelsea',
+  'Liverpool',
+  'Real Madrid',
+  'Manchester City',
+  'Manchester United',
+  'Portugal',
+  'Special Edition'
+];
+
 export default function SearchFilters({
   selectedClub,
   selectedYear,
@@ -26,13 +42,18 @@ export default function SearchFilters({
           {/* Club Search */}
           <div className="flex-1">
             <label className="block text-sm font-medium mb-2">Search by Club</label>
-            <input
-              type="text"
-              placeholder="Enter club name..."
+            <select
               value={selectedClub}
               onChange={(e) => onClubChange(e.target.value)}
               className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:border-primary focus:outline-none transition-colors"
-            />
+            >
+              <option value="">All Clubs</option>
+              {clubs.map((club) => (
+                <option key={club} value={club}>
+                  {club}
+                </option>
+              ))}
+            </select>
           </div>
 
           {/* Year Filter */}

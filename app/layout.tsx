@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bebas_Neue, Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "./context/ThemeContext";
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${poppins.variable} antialiased`}
       >
+        <Script src="https://js.paystack.co/v1/inline.js" strategy="lazyOnload" />
         <ThemeProvider>
           {children}
           <Toaster position="top-right" />
