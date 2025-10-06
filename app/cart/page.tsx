@@ -18,22 +18,6 @@ interface CartItem {
 export default function CartPage() {
   const { state, updateQuantity, removeItem, clearCart } = useCart();
 
-  const handleUpdateQuantity = (id: string, newQuantity: number) => {
-    if (newQuantity > 0) {
-      updateQuantity(id, newQuantity);
-    } else {
-      removeItem(id);
-    }
-  };
-
-  const handleRemoveItem = (id: string) => {
-    removeItem(id);
-  };
-
-  const handleClearCart = () => {
-    clearCart();
-  };
-
   if (state.items.length === 0) {
     return (
       <div className="min-h-screen bg-background py-12">
